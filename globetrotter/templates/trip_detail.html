@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ trip.name }} — GlobeTrotter{% endblock %}
+
+{% block content %}
+<section class="dashboard">
+    <div class="dashboard-header">
+        <h1>{{ trip.name }}</h1>
+        <p>📅 {{ trip.start_date }} → {{ trip.end_date }} &nbsp;|&nbsp; {{ trip.duration_days }} days</p>
+    </div>
+
+    {% if trip.cover_photo %}
+        <img src="{{ trip.cover_photo.url }}" alt="{{ trip.name }}" class="trip-cover-img">
+    {% endif %}
+
+    {% if trip.description %}
+        <div class="dashboard-card" style="max-width: 700px;">
+            <h3>About this trip</h3>
+            <p>{{ trip.description }}</p>
+        </div>
+    {% endif %}
+
+    <div class="dashboard-card" style="max-width: 700px; margin-top: 1.5rem;">
+        <h3>🗺️ Itinerary</h3>
+        <p>City &amp; activity planning is coming in Phase 4 &amp; 5.</p>
+    </div>
+
+    <div class="dashboard-actions" style="margin-top: 2rem;">
+        <a href="{% url 'edit_trip' trip.id %}" class="btn btn-secondary" style="color:#1e3a8a; border-color:#1e3a8a;">Edit Trip</a>
+        <a href="{% url 'delete_trip' trip.id %}" class="btn-link btn-link-danger">Delete Trip</a>
+        <a href="{% url 'my_trips' %}" class="btn-link">← Back to My Trips</a>
+    </div>
+</section>
+{% endblock %}

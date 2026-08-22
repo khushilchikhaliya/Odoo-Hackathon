@@ -78,15 +78,24 @@ body {
 .btn-primary {
     background-color: #fbbf24;
     color: #1f2937;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
 }
 
 .btn-secondary {
     background-color: transparent;
     color: #fff;
     border: 2px solid #fff;
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
 }
 
-.hero-actions .btn:hover {
+.hero-actions .btn:hover,
+.btn:hover {
     transform: translateY(-2px);
 }
 
@@ -122,6 +131,280 @@ body {
     font-size: 0.9rem;
 }
 
+/* ---------------------------------------------------- */
+/* Messages */
+/* ---------------------------------------------------- */
+.messages-container {
+    max-width: 500px;
+    margin: 1rem auto 0 auto;
+    padding: 0 1rem;
+}
+
+.message {
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.message-success {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #34d399;
+}
+
+.message-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #f87171;
+}
+
+.message-info {
+    background-color: #dbeafe;
+    color: #1e40af;
+    border: 1px solid #60a5fa;
+}
+
+/* ---------------------------------------------------- */
+/* Auth pages (Signup / Login / Create Trip) */
+/* ---------------------------------------------------- */
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1.5rem;
+    min-height: 60vh;
+}
+
+.auth-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.trip-form-card {
+    max-width: 480px;
+}
+
+.auth-card h2 {
+    color: #1e3a8a;
+    margin-bottom: 0.3rem;
+}
+
+.auth-subtext {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-form label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 0.9rem;
+    margin-bottom: 0.3rem;
+    color: #374151;
+}
+
+.auth-form input,
+.auth-form textarea {
+    padding: 0.65rem 0.8rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+}
+
+.auth-form input:focus,
+.auth-form textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+}
+
+.auth-submit {
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.field-error {
+    color: #dc2626;
+    font-size: 0.82rem;
+    margin-top: 0.25rem;
+}
+
+.form-error {
+    background-color: #fee2e2;
+    border: 1px solid #f87171;
+    color: #991b1b;
+    padding: 0.6rem 0.9rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-size: 0.88rem;
+}
+
+.auth-switch {
+    margin-top: 1.3rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.auth-switch a {
+    color: #1e3a8a;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
+/* ---------------------------------------------------- */
+/* Dashboard */
+/* ---------------------------------------------------- */
+.dashboard {
+    padding: 2.5rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.dashboard-header h1 {
+    color: #1e3a8a;
+    margin-bottom: 0.3rem;
+}
+
+.dashboard-header p {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-actions {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.dashboard-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.dashboard-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 280px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.dashboard-card h3 {
+    color: #1e3a8a;
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-card p {
+    color: #6b7280;
+    font-size: 0.92rem;
+}
+
+.dashboard-card a {
+    color: #1e3a8a;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.dashboard-card a:hover {
+    text-decoration: underline;
+}
+
+/* ---------------------------------------------------- */
+/* Trip list / Trip cards (My Trips page) */
+/* ---------------------------------------------------- */
+.trip-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.trip-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 300px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.trip-card h3 {
+    color: #1e3a8a;
+    margin-bottom: 0.4rem;
+}
+
+.trip-dates {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.trip-desc {
+    font-size: 0.9rem;
+    color: #4b5563;
+    margin-bottom: 1rem;
+}
+
+.trip-card-actions {
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 0.8rem;
+}
+
+.btn-link {
+    color: #1e3a8a;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+}
+
+.btn-link-danger {
+    color: #dc2626;
+}
+
+.empty-state {
+    background: #fff;
+    border-radius: 10px;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.empty-state p {
+    color: #6b7280;
+    margin-bottom: 1.2rem;
+}
+
+.trip-cover-img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    max-height: 300px;
+    object-fit: cover;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
     .navbar {
@@ -130,5 +413,8 @@ body {
     }
     .hero h1 {
         font-size: 2rem;
+    }
+    .dashboard {
+        padding: 1.5rem 1rem;
     }
 }

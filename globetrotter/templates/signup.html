@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}GlobeTrotter — Sign Up{% endblock %}
+
+{% block content %}
+<section class="auth-page">
+    <div class="auth-card">
+        <h2>Create your account</h2>
+        <p class="auth-subtext">Start planning your next multi-city adventure.</p>
+
+        {% if form.non_field_errors %}
+            <div class="form-error">
+                {% for error in form.non_field_errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <form method="POST" class="auth-form">
+            {% csrf_token %}
+
+            <label for="{{ form.username.id_for_label }}">Username</label>
+            {{ form.username }}
+            {% if form.username.errors %}
+                <p class="field-error">{{ form.username.errors.0 }}</p>
+            {% endif %}
+
+            <label for="{{ form.email.id_for_label }}">Email</label>
+            {{ form.email }}
+            {% if form.email.errors %}
+                <p class="field-error">{{ form.email.errors.0 }}</p>
+            {% endif %}
+
+            <label for="{{ form.password.id_for_label }}">Password</label>
+            {{ form.password }}
+            {% if form.password.errors %}
+                <p class="field-error">{{ form.password.errors.0 }}</p>
+            {% endif %}
+
+            <label for="{{ form.confirm_password.id_for_label }}">Confirm Password</label>
+            {{ form.confirm_password }}
+            {% if form.confirm_password.errors %}
+                <p class="field-error">{{ form.confirm_password.errors.0 }}</p>
+            {% endif %}
+
+            <button type="submit" class="btn btn-primary auth-submit">Sign Up</button>
+        </form>
+
+        <p class="auth-switch">
+            Already have an account? <a href="{% url 'login' %}">Log in</a>
+        </p>
+    </div>
+</section>
+{% endblock %}

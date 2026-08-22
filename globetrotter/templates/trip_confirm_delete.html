@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Trip — GlobeTrotter{% endblock %}
+
+{% block content %}
+<section class="auth-page">
+    <div class="auth-card">
+        <h2>Delete "{{ trip.name }}"?</h2>
+        <p class="auth-subtext">This action cannot be undone. All trip data will be permanently removed.</p>
+
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary auth-submit" style="background-color:#dc2626; color:#fff;">
+                Yes, Delete This Trip
+            </button>
+        </form>
+
+        <p class="auth-switch">
+            <a href="{% url 'trip_detail' trip.id %}">← Cancel, go back</a>
+        </p>
+    </div>
+</section>
+{% endblock %}

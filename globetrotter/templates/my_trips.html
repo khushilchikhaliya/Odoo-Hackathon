@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}My Trips — GlobeTrotter{% endblock %}
+
+{% block content %}
+<section class="dashboard">
+    <div class="dashboard-header">
+        <h1>My Trips</h1>
+        <p>All the trips you've planned, saved in your account.</p>
+    </div>
+
+    <div class="dashboard-actions">
+        <a href="{% url 'create_trip' %}" class="btn btn-primary">+ Plan New Trip</a>
+    </div>
+
+    {% if trips %}
+        <div class="trip-list">
+            {% for trip in trips %}
+                <div class="trip-card">
+                    <h3>{{ trip.name }}</h3>
+                    <p class="trip-dates">📅 {{ trip.start_date }} → {{ trip.end_date }} ({{ trip.duration_days }} days)</p>
+                    {% if trip.description %}
+                        <p class="trip-desc">{{ trip.description|truncatewords:20 }}</p>
+                    {% endif %}
+                    <div class="trip-card-actions">
+                        <a href="{% url 'trip_detail' trip.id %}" class="btn-link">View</a>
+                        <a href="{% url 'edit_trip' trip.id %}" class="btn-link">Edit</a>
+                        <a href="{% url 'delete_trip' trip.id %}" class="btn-link btn-link-danger">Delete</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="empty-state">
+            <p>You haven't planned any trips yet.</p>
+            <a href="{% url 'create_trip' %}" class="btn btn-primary">Plan Your First Trip</a>
+        </div>
+    {% endif %}
+</section>
+{% endblock %}
