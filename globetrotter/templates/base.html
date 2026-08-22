@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}GlobeTrotter{% endblock %}</title>
+    <link rel="stylesheet" href="{% load static %}{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="navbar-brand">
+            <a href="{% url 'home' %}">🌍 GlobeTrotter</a>
+        </div>
+        <nav class="navbar-links">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="#">Login</a>
+            <a href="#">Signup</a>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 GlobeTrotter — Hackathon Project</p>
+    </footer>
+
+</body>
+</html>
